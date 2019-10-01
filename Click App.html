@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+    var cilckCount = 0;
+    function callclick() {
+        keyPress()
+        setInterval("keyPress()", 100000);
+    }
+    function keyPress() {
+        cilckCount = cilckCount + 1;
+        document.getElementById("btnStart").value = "Started!  Click Count : " + cilckCount;
+        window.resizeTo(250, 250)
+        var wscript = new ActiveXObject("WScript.Shell");
+        wscript.sendKeys("{f9}");
+    }
+</script>
+<html>
+
+<head>
+    <title>Click App</title>
+</head>
+
+<body>
+    <input name"Button" id="btnStart" onClick="callclick()" type="submit" value="Click to start!">
+    </input>
+</body>
+
+</html>
